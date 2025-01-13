@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lecturers</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        a { color: purple; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h1>Lecturers</h1>
+    <a href="/">Home</a>
+    
+    <table>
+        <tr>
+            <th>Lecturer ID</th>
+            <th>Name</th>
+            <th>Department ID</th>
+            <th>Action</th>
+        </tr>
+        <% lecturers.forEach(function(lecturer) { %>
+            <tr>
+                <td><%= lecturer._id %></td>
+                <td><%= lecturer.name %></td>
+                <td><%= lecturer.did %></td>
+                <td><a href="/lecturers/delete/<%= lecturer._id %>">Delete</a></td>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+</html>

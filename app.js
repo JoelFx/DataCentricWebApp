@@ -14,8 +14,8 @@ app.set('views', __dirname); // Set views to root directory
 // MySQL Connection
 const mysqlConnection = mysql.createConnection({
     host: 'localhost',
-    user: 'root',  // Replace with your MySQL username
-    password: '',   // Replace with your MySQL password
+    user: 'root',  
+    password: 'root',   
     database: 'proj2024mysql'
 });
 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .error { color: red; margin-bottom: 10px; }
+        label { display: block; margin: 10px 0 5px; }
+        input { margin-bottom: 10px; padding: 5px; }
+        a { color: purple; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <a href="/">Home</a>
+    <h1>Add Student</h1>
+    
+    <% if (errors && errors.length > 0) { %>
+        <% errors.forEach(function(error) { %>
+            <div class="error"><%= error %></div>
+        <% }); %>
+    <% } %>
+
+    <form method="POST" action="/students/add">
+        <label>Student ID</label>
+        <input type="text" name="sid" value="<%= typeof sid !== 'undefined' ? sid : '' %>" required>
+        
+        <label>Name</label>
+        <input type="text" name="name" value="<%= typeof name !== 'undefined' ? name : '' %>" required>
+        
+        <label>Age</label>
+        <input type="number" name="age" value="<%= typeof age !== 'undefined' ? age : '' %>" required>
+        
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
